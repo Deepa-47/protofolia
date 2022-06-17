@@ -13,12 +13,12 @@ body{
 }
 
 .container {
-    margin:50px 200px;
     position: relative;
     width: 100%;
     min-width: 1000px;
     min-height: 1000px;
     background: #ffffff;
+    margin: 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 35px 35px rgba(0,0,0,0.1);
@@ -61,7 +61,7 @@ body{
 
 .profile h2{
     color: #ffffff;
-    font-size: 1.3em;
+    font-size: 1.5em;
     margin-top: 20px;
     text-transform: uppercase;
     text-align: center;
@@ -106,7 +106,7 @@ body{
 
 .contactInfo ul li span{
     color: #ffffff;
-    font-size: 15px;
+    font-weight: 300;
 }
 
 
@@ -123,8 +123,8 @@ body{
     color: #ffffff;
     font-weight: 500;
 }
-.contactInfo.education h4.college{
-    color:lightblue;
+.contactInfo.education h4:nth-child(2){
+    color:#ffffff;
     font-weight: 300;
 }
 
@@ -195,21 +195,46 @@ p{
     background: #03a9f4;
 }
 
-.interest ul li{
-    position: relative;
+.interest ul {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.interest ul li {
     list-style: none;
+    color: #333;
+    font-weight: 500;
     margin: 10px 0;
 }
 
-.interest ul li .icon{
-    display: inline-block;
-    width: 30px;
+.interest ul li .fa{
+    color: #03a9f4;
     font-size: 18px;
-    color:#03a9f4;
+    width: 20px;
 }
 
-.interest ul li span{
-    color: #333333;
-    font-size: 15px;
-}
 
+@media (max-width: 1000px)
+{
+	.container{
+		margin: 10px;
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.interest ul{
+        grid-template-columns: repeat(2,1fr);
+    }
+	
+}
+@media (max-width: 600px)
+{
+	.about .box{
+        flex-direction: column;
+    }
+    .interest ul{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .skills .box{
+        grid-template-columns: repeat(1, 1fr);
+    }
+	
+} 
